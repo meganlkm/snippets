@@ -30,15 +30,11 @@ grep -lr 'example.com' . | xargs sed -i '' 's/example.com/frpoc.local/g'
 # replace comma with new line - outputs to stdout
 tr , '\n' < file.txt
 
+
+TEST=thistext
 # to upper case
-TEST=xrs
 TEST2=$(echo $TEST | tr '[:lower:]' '[:upper:]')
-
-TEST=xrs
-TEST=$(echo $TEST | tr '[:lower:]' '[:upper:]')
-
 # to lower case
-TEST=xrs
 TEST2=$(echo $TEST | tr '[:upper:]' '[:lower:]')
 
 
