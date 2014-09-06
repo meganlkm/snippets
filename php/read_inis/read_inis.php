@@ -25,6 +25,12 @@ putenv("dbname={$sysconf->database->dbname}");
 putenv("dbuser={$sysconf->database->dbuser}");
 putenv("dbpass={$sysconf->database->dbpass}");
 
+/**
+ * cast numberic strings to integers
+ *
+ * @param  array $data
+ * @return array
+ */
 function numbericStringsToInts($data)
 {
     array_walk_recursive($data, function (&$value, $key) {
@@ -37,6 +43,12 @@ function numbericStringsToInts($data)
     return $data;
 }
 
+/**
+ * cast associative array to object
+ *
+ * @param  array $data associative array containing arrays
+ * @return object      cast all arrays within to objects
+ */
 function arrayToObject($data)
 {
     if (is_array($data)) {
